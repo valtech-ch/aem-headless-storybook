@@ -65,17 +65,17 @@ To get this feature to work with AEM, the app needs to be able to identify which
 
 ## Features
 
-* AdobeIO Runtime (Serverless) rendering of the SPA editor 
+* AdobeIO Runtime (Serverless) rendering of the SPA editor
 * Local + Remote development
 * Uses AIO CLI
 
 ## Installation
 
-1. Install [NodeJS](https://nodejs.org/en/download/) (v10+), globally. This will also install `npm`.
+1. Install [NodeJS](https://nodejs.org/en/download/) (v14+), globally. This will also install `npm`.
 2. Navigate to `ui.frontend` in your project and run `npm install`. (You must have run the archetype with `-DfrontendModule=react` for this to work)
 3. If running locally the following images must be installed:
-   * docker pull openwhisk/action-nodejs-v10:latest
-   * docker pull adobeapiplatform/adobe-action-nodejs-v10:3.0.21
+   * docker pull openwhisk/action-nodejs-v14:latest
+   * docker pull adobeapiplatform/adobe-action-nodejs-v14:3.0.29
 
 ## Usage
 
@@ -118,7 +118,7 @@ com.adobe.cq.remote.content.renderer.impl.factory.ConfigurationFactoryImpl~mysit
     "getRemoteHTMLRendererUrl" : "http://localhost:3233/api/v1/web/guest/react-server-1.1.2/ssr",
     "getRequestTimeout": 10000,
     "getAdditionalRequestHeaders": [
-    
+
     ]
 }
 ```
@@ -154,7 +154,7 @@ if(!!initialStateScriptTag){
         const initialState = JSON.parse(initialStateScriptTag.innerHTML);
         initialStateScriptTag.remove();
         hydrateApp(initialState);
-        
+
         console.info('hydrated react DOM');
     }catch(err) {
         console.error('failed to parse initial state json! re-rendering output.', err);
