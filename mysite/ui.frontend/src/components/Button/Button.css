@@ -1,0 +1,39 @@
+.cmp-button {
+    border: 0;
+    border-radius: 4px;
+    min-width: 120px;
+    min-height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.cmp-button--primary .cmp-button {
+    background-color: #d04;
+    color: white;
+    font-weight: bold;
+}
+.cmp-button--primary .cmp-button:hover {
+    background-color: #f26;
+}
+
+.cmp-button--secondary .cmp-button {
+    background-color: white;
+    color: #d04;
+    font-weight: bold;
+    border: 2px solid #d04;
+}
+.cmp-button--secondary .cmp-button:hover {
+    background-color: #fff4ff;
+}
+
+.cmp-button--tertiary .cmp-button {
+    background-color: white;
+    color: #d04;
+    border: 1px solid #d04;
+    font-size: 14px;
+}
+.cmp-button--tertiary .cmp-button:hover {
+    background-color: #fff4ff;
+}

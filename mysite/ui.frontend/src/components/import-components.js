@@ -37,7 +37,6 @@ import {
 
 import {
     BreadCrumbV2,BreadCrumbV2IsEmptyFn,
-    ButtonV1,ButtonV1IsEmptyFn,
     ImageV2,ImageV2IsEmptyFn,
     LanguageNavigationV1,
     NavigationV1,
@@ -46,6 +45,8 @@ import {
     SeparatorV1,SeparatorV1IsEmptyFn,
     ListV2,ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
+
+import { Button, ButtonIsEmptyFn } from './Button/Button'
 
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
@@ -59,7 +60,7 @@ MapTo('mysite/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
 MapTo('mysite/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
 MapTo('mysite/components/separator')(SeparatorV1, {isEmpty: SeparatorV1IsEmptyFn});
 
-MapTo('mysite/components/button')(ButtonV1, {isEmpty: ButtonV1IsEmptyFn});
+MapTo('mysite/components/button')(Button, {isEmpty: ButtonIsEmptyFn});
 MapTo('mysite/components/teaser')(TeaserV1, {isEmpty: TeaserV1IsEmptyFn});
 MapTo('mysite/components/image')(ImageV2, {isEmpty: ImageV2IsEmptyFn});
 MapTo('mysite/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
