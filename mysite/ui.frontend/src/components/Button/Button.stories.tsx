@@ -81,11 +81,59 @@ export function Secondary(): JSX.Element {
   )
 }
 
-export function Tertiary(): JSX.Element {
+export function Text(): JSX.Element {
   return (
-    <span className="cmp-button--tertiary">
-      <BemBlock text="Search products" />
-    </span>
+    <>
+      <div>
+        <p>One button</p>
+        <span className="cmp-button--text">
+          <BemBlock text="Search" />
+        </span>
+      </div>
+      <div>
+        <p>With very short text</p>
+        <span className="cmp-button--text">
+          <BemBlock text="OK" />
+        </span>
+      </div>
+      <div>
+        <p>Two consecutive buttons in row</p>
+        <div>
+          <span className="cmp-button--text">
+            <BemBlock text="Search diff" />
+          </span>
+          <span className="cmp-button--text">
+            <BemBlock text="Search products" />
+          </span>
+        </div>
+      </div>
+      <div>
+        <p>Two consecutive buttons in column</p>
+        <div>
+          <div className="cmp-button--text">
+            <BemBlock text="Search diff" />
+          </div>
+          <div className="cmp-button--text">
+            <BemBlock text="Search products" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>With link</p>
+        <span className="cmp-button--text">
+          <BemBlock text="Linking to somewhere" link="https://www.valtech.com" />
+        </span>
+      </div>
+      <div>
+        <p>With long text</p>
+        <span className="cmp-button--text">
+          <BemBlock
+            text="A link with quite a long text"
+            link="https://www.valtech.com"
+          />
+        </span>
+      </div>
+    </>
   )
 }
 

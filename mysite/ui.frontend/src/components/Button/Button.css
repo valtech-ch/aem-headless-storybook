@@ -3,7 +3,7 @@
     border-radius: 4px;
     min-width: 120px;
     min-height: 40px;
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 18px;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -28,12 +28,19 @@
     background-color: #fff4ff;
 }
 
-.cmp-button--tertiary .cmp-button {
+.cmp-button--text .cmp-button {
     background-color: white;
     color: #d04;
-    border: 1px solid #d04;
     font-size: 14px;
+    font-weight: bold;
 }
-.cmp-button--tertiary .cmp-button:hover {
+.cmp-button--text .cmp-button:after {
+    content: '➜';
+    color: #d04;
+    font-size: 14px;
+    margin-left: 8px
+}
+.cmp-button--text .cmp-button:hover {
     background-color: #fff4ff;
+    cursor: pointer;
 }
