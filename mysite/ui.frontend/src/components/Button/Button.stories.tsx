@@ -22,8 +22,8 @@ export function Primary(): JSX.Element {
     <>
       <div>
         <p>One button</p>
-        <span className="cmp-button--primary">
-          <BemBlock text="Search" />
+        <span className="cmp-button--primary" data-testid="primary-one-button">
+          <BemBlock text="Searrrch" />
         </span>
       </div>
       <div>
@@ -72,6 +72,7 @@ export function Primary(): JSX.Element {
     </>
   )
 }
+Primary.args = {}
 
 export function Secondary(): JSX.Element {
   return (
@@ -86,7 +87,7 @@ export function Text(): JSX.Element {
     <>
       <div>
         <p>One button</p>
-        <span className="cmp-button--text">
+        <span className="cmp-button--text" data-testid="text-one-button">
           <BemBlock text="Search" />
         </span>
       </div>
@@ -136,6 +137,7 @@ export function Text(): JSX.Element {
     </>
   )
 }
+Text.args = {}
 
 export function PreviewSpacing(): JSX.Element {
   return (

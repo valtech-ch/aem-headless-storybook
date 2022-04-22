@@ -2,6 +2,11 @@
 
 ## About the demo
 
+Key points:
+
+* Feedback latency is smaller
+* Storybook stories can be used as mock data for unit tests
+
 ### Setup
 
 1. Follow https://experienceleague.adobe.com/docs/experience-manager-learn/foundation/development/set-up-a-local-aem-development-environment.html
@@ -14,6 +19,8 @@
    * `/content/mysite/sandbox/components/button/button--text.html`
 
 ### Action sequence
+
+#### Feedback latency is smaller
 
 1. React dev server
    1. At `.env.development`, set `REACT_APP_PAGE_MODEL_PATH=/content/mysite/sandbox/components/button/button--primary.json`
@@ -29,3 +36,8 @@
    1. Measure time to reload
    1. Click on the "CORE > Button > Text" story
    1. Measure time to different story
+
+#### Storybook stories can be used as mock data for unit tests
+
+1. Open `Button.test.tsx`
+2. On a terminal, run `npm run test`
