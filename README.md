@@ -1,13 +1,15 @@
 # aem-headless-storybook
 
-## About the demo
+## Storybook vs AEM Archetype frontend workflow
 
-Key points:
+Key frontend workflow differences on Storybook vs AEM Archeytpe setup (AEM + React dev server)
 
-* Feedback latency is smaller
-* Storybook stories can be used as mock data for unit tests
+||Storybook|AEM Archetype setup|
+|---------|--------------------------------------|---------------------------------------|
+|Feedback latency between pages/stories|ca. 1 second|ca. 12 seconds|
+|Sample content can be used as mock data|✅|🚫|
 
-### Setup
+## Setup
 
 1. Follow https://experienceleague.adobe.com/docs/experience-manager-learn/foundation/development/set-up-a-local-aem-development-environment.html
 2. On different terminal tabs, launch:
@@ -18,15 +20,13 @@ Key points:
    * `/content/mysite/sandbox/components/button/button--primary.html`
    * `/content/mysite/sandbox/components/button/button--text.html`
 
-### Action sequence
+## Action sequence
 
-#### Feedback latency is smaller
+### Feedback latency between pages/stories
 
 1. React dev server
    1. At `.env.development`, set `REACT_APP_PAGE_MODEL_PATH=/content/mysite/sandbox/components/button/button--primary.json`
    1. Stop `npm start` and start it again (http://localhost:3000/content/mysite/us/en/home.html will open)
-   1. At `Text.css` > `p` selector > set `color: #d04;`
-   1. Measure time to reload
    1. At `.env.development`, set `REACT_APP_PAGE_MODEL_PATH=/content/mysite/sandbox/components/button/button--text.json`
    1. Stop `npm start` and start it again (http://localhost:3000/content/mysite/us/en/home.html will open)
    1. Measure time to different page
@@ -37,7 +37,7 @@ Key points:
    1. Click on the "CORE > Button > Text" story
    1. Measure time to different story
 
-#### Storybook stories can be used as mock data for unit tests
+### Sample content can be used as mock data for unit tests
 
 1. Open `Button.test.tsx`
 2. On a terminal, run `npm run test`
