@@ -1,13 +1,10 @@
-# aem-headless-storybook
+# AEM Archetype + Storybook for super fast delivery of Headless AEM projects
 
-## Storybook vs AEM Archetype frontend workflow
+Key facts and figures:
 
-Key frontend workflow differences on Storybook vs AEM Archeytpe setup (AEM + React dev server)
-
-||Storybook|AEM Archetype setup|
-|---------|--------------------------------------|---------------------------------------|
-|Feedback latency between pages/stories|ca. 1 second|ca. 12 seconds|
-|Sample content can be used as mock data|✅|🚫|
+* 1-second reload latency in the same component
+* 1-second latency between components
+* Sample content easily reused as mock data for unit tests
 
 ## Setup
 
@@ -20,24 +17,21 @@ Key frontend workflow differences on Storybook vs AEM Archeytpe setup (AEM + Rea
    * `/content/mysite/sandbox/components/button/button--primary.html`
    * `/content/mysite/sandbox/components/button/button--text.html`
 
-## Action sequence
+## Measuring latency between pages/stories
 
-### Feedback latency between pages/stories
+### For React's dev server
 
-1. React dev server
-   1. At `.env.development`, set `REACT_APP_PAGE_MODEL_PATH=/content/mysite/sandbox/components/button/button--primary.json`
-   1. Stop `npm start` and start it again (http://localhost:3000/content/mysite/us/en/home.html will open)
    1. At `.env.development`, set `REACT_APP_PAGE_MODEL_PATH=/content/mysite/sandbox/components/button/button--text.json`
-   1. Stop `npm start` and start it again (http://localhost:3000/content/mysite/us/en/home.html will open)
-   1. Measure time to different page
-2. Storybook
-   1. Visit http://localhost:6007/?path=/story/core-button--primary
-   1. At `Button.css` > `.cmp-button` selector > set `border-radius: 44px;`
-   1. Measure time to reload
-   1. Click on the "CORE > Button > Text" story
-   1. Measure time to different story
+   2. Stop the `npm start` process from the Setup and start it again (http://localhost:3000/content/mysite/us/en/home.html will open)
+   3. Wait for the page content to be rendered
 
-### Sample content can be used as mock data for unit tests
+### For Storybook
+
+   1. Visit http://localhost:6007/?path=/story/core-button--primary
+   2. Click on the "CORE > Button > Text" story
+   3. (The story will load nearly instantly)
+
+## Running tests based on Storybook stories
 
 1. Open `Button.test.tsx`
-2. On a terminal, run `npm run test`
+2. On a terminal, run `npm run test -- -t Button`
